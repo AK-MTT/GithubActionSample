@@ -86,6 +86,8 @@ def send_weather(access_token, weather):
 
     import datetime
     today = datetime.date.today()
+    start_date = datetime(2022, 10, 17)
+    delta = today - start_date
     today_str = today.strftime("%Y年%m月%d日")
 
     body = {
@@ -96,17 +98,20 @@ def send_weather(access_token, weather):
             "date": {
                 "value": today_str
             },
-            "region": {
+            "city": {
                 "value": weather[0]
             },
             "weather": {
                 "value": weather[2]
             },
-            "temp": {
+            "temperature": {
                 "value": weather[1]
             },
             "wind_dir": {
                 "value": weather[3]
+            },
+            "love_day": {
+                "value": delta
             },
             "today_note": {
                 "value": get_daily_love()
