@@ -86,7 +86,7 @@ def send_weather(access_token, weather):
 
     import datetime
     today = datetime.date.today()
-    start_date = datetime.datetime(2022, 10, 17)
+    start_date = datetime.date(2022, 10, 17)
     delta = today - start_date
     today_str = today.strftime("%Y年%m月%d日")
 
